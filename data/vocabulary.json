@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {
+      "id": "trading-vocabulary",
+      "title": "Trading Vocabulary",
+      "svg": "trading-vocabulary.svg",
+      "description": "Core trading terms and definitions"
+    },
+    {
+      "id": "trade-signal-1",
+      "title": "Trade Signal 1",
+      "svg": "trade-signal-1.svg",
+      "description": "Primary entry signal logic"
+    },
+    {
+      "id": "trade-signal-2",
+      "title": "Trade Signal 2",
+      "svg": "trade-signal-2.svg",
+      "description": "Secondary confirmation signal"
+    },
+    {
+      "id": "trade-signal-3",
+      "title": "Trade Signal 3",
+      "svg": "trade-signal-3.svg",
+      "description": "Aggressive or momentum-based entries"
+    },
+    {
+      "id": "post-trade-review",
+      "title": "Post Trade Review",
+      "svg": "post-trade-review.svg",
+      "description": "Learning and performance evaluation"
+    },
+    {
+      "id": "trade-management",
+      "title": "Trade Management",
+      "svg": "trade-management.svg",
+      "description": "SL, trailing, partial booking rules"
+    },
+    {
+      "id": "order-placement",
+      "title": "Order Placement",
+      "svg": "order-placement.svg",
+      "description": "Market, limit, SL, bracket orders"
+    },
+    {
+      "id": "pre-trade-actions",
+      "title": "Pre Trade Actions",
+      "svg": "pre-trade-actions.svg",
+      "description": "Checklist before entering any trade"
+    },
+    {
+      "id": "market-risk",
+      "title": "Market & Risk",
+      "svg": "market-risk.svg",
+      "description": "Risk, volatility, drawdown concepts"
+    },
+    {
+      "id": "option-trading",
+      "title": "Option Trading",
+      "svg": "option-trading.svg",
+      "description": "Greeks, IV, strategies"
+    },
+    {
+      "id": "stock-trading",
+      "title": "Stock Trading",
+      "svg": "stock-trading.svg",
+      "description": "Cash, swing, positional trading"
+    }
+  ]
+}
