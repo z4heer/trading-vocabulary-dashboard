@@ -1,7 +1,7 @@
 console.log("JS Loaded");
+
 function getQueryParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
+    return new URLSearchParams(window.location.search).get(name);
 }
 
 fetch("data/vocabulary.json")
@@ -11,14 +11,14 @@ fetch("data/vocabulary.json")
         const dashboard = document.getElementById("dashboard");
         const id = getQueryParam("id");
 
-        // DASHBOARD PAGE
+        // DASHBOARD
         if (dashboard) {
             data.categories.forEach(item => {
                 const card = document.createElement("div");
                 card.className = "card";
 
                 card.innerHTML = `
-                    <img src="assets/svg/${item.svg}">
+                    <img src="assets/svg/${item.svg}" alt="${item.title}">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
                 `;
@@ -38,6 +38,7 @@ fetch("data/vocabulary.json")
 
             document.getElementById("title").innerText = item.title;
             document.getElementById("description").innerText = item.description;
-            document.getElementById("image").src = `assets/svg/${item.svg}`;
+            document.getElementById("image").src = `../assets/svg/${item.svg}`;
         }
-    });
+    })
+    .catch(err => console.error("Fetch error:", err));
