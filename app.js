@@ -1,0 +1,43 @@
+console.log("JS Loaded");
+function getQueryParam(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
+}
+
+fetch("data/vocabulary.json")
+    .then(res => res.json())
+    .then(data => {
+
+        const dashboard = document.getElementById("dashboard");
+        const id = getQueryParam("id");
+
+        // DASHBOARD PAGE
+        if (dashboard) {
+            data.categories.forEach(item => {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                card.innerHTML = `
+                    <img src="assets/svg/${item.svg}">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                `;
+
+                card.onclick = () => {
+                    window.location.href = `pages/detail.html?id=${item.id}`;
+                };
+
+                dashboard.appendChild(card);
+            });
+        }
+
+        // DETAIL PAGE
+        if (id) {
+            const item = data.categories.find(c => c.id === id);
+            if (!item) return;
+
+            document.getElementById("title").innerText = item.title;
+            document.getElementById("description").innerText = item.description;
+            document.getElementById("image").src = `assets/svg/${item.svg}`;
+        }
+    });
