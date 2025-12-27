@@ -4,7 +4,7 @@ function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
 }
 
-fetch("data/vocabulary.json")
+fetch("/trading-vocabulary-dashboard/data/vocabulary.json")
     .then(res => res.json())
     .then(data => {
 
@@ -18,7 +18,7 @@ fetch("data/vocabulary.json")
                 card.className = "card";
 
                 card.innerHTML = `
-                    <img src="assets/svg/${item.svg}" alt="${item.title}">
+                    <img src="assests/svg/${item.svg}" alt="${item.title}">
                     <h3>${item.title}</h3>
                     <p>${item.description}</p>
                 `;
@@ -38,7 +38,7 @@ fetch("data/vocabulary.json")
 
             document.getElementById("title").innerText = item.title;
             document.getElementById("description").innerText = item.description;
-            document.getElementById("image").src = `../assets/svg/${item.svg}`;
+            document.getElementById("image").src = `../assests/svg/${item.svg}`;
         }
     })
     .catch(err => console.error("Fetch error:", err));
