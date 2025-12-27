@@ -3,8 +3,7 @@ console.log("JS Loaded");
 function getQueryParam(name) {
     return new URLSearchParams(window.location.search).get(name);
 }
-
-fetch("data/vocabulary.json")
+fetch("/trading-vocabulary-dashboard/data/vocabulary.json")
     .then(res => res.json())
     .then(data => {
 
