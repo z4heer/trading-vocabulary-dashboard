@@ -47,3 +47,28 @@ header {
     font-size: 13px;
     color: #94a3b8;
 }
+.detail-icon {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+}
+.detail-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.detail-container h1 {
+    color: #222;
+}
+
+.detail-container p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+}
