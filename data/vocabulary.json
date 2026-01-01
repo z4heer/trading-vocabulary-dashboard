@@ -57,13 +57,13 @@
     {
       "id": "option-trading",
       "title": "Option Trading",
-      "svg": "option-trading.svg",
+      "svg": "options-trading.svg",
       "description": "Greeks, IV, strategies"
     },
     {
       "id": "stock-trading",
       "title": "Stock Trading",
-      "svg": "stock-trading.svg",
+      "svg": "stocks-trading.svg", 
       "description": "Cash, swing, positional trading"
     }
   ]
