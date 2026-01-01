@@ -41,7 +41,7 @@ fetch("/trading-vocabulary-dashboard/data/vocabulary.json")
             //document.getElementById("image").src = `../assests/svg/${item.svg}`;
             const container = document.getElementById("svgContainer");
 
-            fetch(`../asset/svg/${item.svg}`)
+            fetch(`../assests/svg/${item.svg}`)
                 .then(res => res.text())
                 .then(svgText => {
                     container.innerHTML = svgText;
