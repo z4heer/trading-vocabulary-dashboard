@@ -38,7 +38,22 @@ fetch("/trading-vocabulary-dashboard/data/vocabulary.json")
 
             document.getElementById("title").innerText = item.title;
             document.getElementById("description").innerText = item.description;
-            document.getElementById("image").src = `../assests/svg/${item.svg}`;
+            //document.getElementById("image").src = `../assests/svg/${item.svg}`;
+            const container = document.getElementById("svgContainer");
+
+            fetch(`../assests/svg/${item.svg}`)
+                .then(res => res.text())
+                .then(svg => {
+                    container.innerHTML = svg;
+
+                    const svgEl = container.querySelector("svg");
+                    if (svgEl) {
+                        svgEl.setAttribute("width", "100%");
+                        svgEl.setAttribute("height", "100%");
+                        svgEl.style.maxWidth = "100%";
+                    }
+                });
+
         }
     })
     .catch(err => console.error("Fetch error:", err));
