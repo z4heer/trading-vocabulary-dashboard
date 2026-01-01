@@ -79,10 +79,10 @@ header {
     background: #ffffff;
     border-radius: 14px;
     padding: 10px;
-    margin-bottom: 20px;
 }
 
 .svg-container svg {
-    width: max-content;
+    width: 100%;
     height: auto;
+    display: block;
 }

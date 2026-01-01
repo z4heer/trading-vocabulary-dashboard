@@ -41,17 +41,29 @@ fetch("/trading-vocabulary-dashboard/data/vocabulary.json")
             //document.getElementById("image").src = `../assests/svg/${item.svg}`;
             const container = document.getElementById("svgContainer");
 
-            fetch(`../assests/svg/${item.svg}`)
+            fetch(`../asset/svg/${item.svg}`)
                 .then(res => res.text())
-                .then(svg => {
-                    container.innerHTML = svg;
+                .then(svgText => {
+                    container.innerHTML = svgText;
 
-                    const svgEl = container.querySelector("svg");
-                    if (svgEl) {
-                        svgEl.setAttribute("width", "100%");
-                        svgEl.setAttribute("height", "100%");
-                        svgEl.style.maxWidth = "100%";
-                    }
+                    const svg = container.querySelector("svg");
+                    if (!svg) return;
+
+                    // Force SVG to render fully
+                    svg.removeAttribute("width");
+                    svg.removeAttribute("height");
+
+                    // Give browser a tick to render, then calculate bounds
+                    requestAnimationFrame(() => {
+                        const bbox = svg.getBBox();
+
+                        svg.setAttribute(
+                            "viewBox",
+                            `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`
+                        );
+
+                        svg.setAttribute("preserveAspectRatio", "xMidYMid meet");
+                    });
                 });
 
         }
